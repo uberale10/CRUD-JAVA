@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ec0d8deb-5977-4d4e-b3b3-db2646a84789">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     reparaciones.`codigo` AS reparaciones_codigo,
+     reparaciones.`fecha_reparacion` AS reparaciones_fecha_reparacion,
+     reparaciones.`idUsuarios` AS reparaciones_idUsuarios,
+     reparaciones.`idRol` AS reparaciones_idRol,
+     reparaciones.`codZapatos` AS reparaciones_codZapatos,
+     reparaciones.`arreglo` AS reparaciones_arreglo,
+     reparaciones.`precio` AS reparaciones_precio
+FROM
+     `reparaciones` reparaciones]]>
+	</queryString>
+	<field name="reparaciones_codigo" class="java.lang.Integer"/>
+	<field name="reparaciones_fecha_reparacion" class="java.sql.Date"/>
+	<field name="reparaciones_idUsuarios" class="java.lang.Integer"/>
+	<field name="reparaciones_idRol" class="java.lang.Integer"/>
+	<field name="reparaciones_codZapatos" class="java.lang.Integer"/>
+	<field name="reparaciones_arreglo" class="java.lang.String"/>
+	<field name="reparaciones_precio" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="1fa52411-bac3-4c41-a62e-dc31beecbb3a"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="9fd9dff8-1aa8-4154-b920-35d34688a841"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Clinica Calzaditos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="4e264c57-c944-4a30-872c-a8a25f01e428"/>
+				<text><![CDATA[Reportes ventas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="c86de357-c5d9-4247-b305-dfcebbcc7e20"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="79" height="15" uuid="d3e889a9-ad07-43d9-859a-fb58991f4b5d"/>
+				<text><![CDATA[codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="79" y="19" width="79" height="15" uuid="7af9dc78-ebf6-4fe5-adb3-2d5222e4c858"/>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="158" y="19" width="79" height="15" uuid="8183b24c-9322-4845-9cbc-70f5046946f5"/>
+				<text><![CDATA[reparador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="237" y="19" width="79" height="15" uuid="348da202-bc1e-4663-a8a9-dbf92721455e"/>
+				<text><![CDATA[cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="316" y="19" width="79" height="15" uuid="32f9b84f-14f6-416c-8a8e-84be6cefee0e"/>
+				<text><![CDATA[reparaciones_codZapatos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="395" y="19" width="79" height="15" uuid="17f4b8d9-0c82-42ab-86d2-9f97e35c6195"/>
+				<text><![CDATA[reparacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="474" y="19" width="79" height="15" uuid="04823a92-f524-4357-9373-ecb01adf16fb"/>
+				<text><![CDATA[valor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="d305b9b0-b368-4e1e-ae63-bab1ba405479"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="79" height="15" uuid="bd64296f-64be-4d40-97e5-68ff88afe44f"/>
+				<textFieldExpression><![CDATA[$F{reparaciones_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="79" y="0" width="79" height="15" uuid="09741b47-3410-497b-b3be-cfbfd851f716"/>
+				<textFieldExpression><![CDATA[$F{reparaciones_fecha_reparacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="158" y="0" width="79" height="15" uuid="ac456224-52f3-4612-ba82-138afe728bdf"/>
+				<textFieldExpression><![CDATA[$F{reparaciones_idUsuarios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="237" y="0" width="79" height="15" uuid="2f4bf9ad-a885-456b-9adc-6e2ee2823bec"/>
+				<textFieldExpression><![CDATA[$F{reparaciones_idRol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="316" y="0" width="79" height="15" uuid="1d8fe66f-bb34-4931-a686-9d183b47a65d"/>
+				<textFieldExpression><![CDATA[$F{reparaciones_codZapatos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="395" y="0" width="79" height="15" uuid="d77290d6-288f-49a6-9406-31ff6432bd1a"/>
+				<textFieldExpression><![CDATA[$F{reparaciones_arreglo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="474" y="0" width="79" height="15" uuid="22d6e081-21a7-4f6d-a9b9-64448dc908b8"/>
+				<textFieldExpression><![CDATA[$F{reparaciones_precio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="be27ba93-e969-45d6-93ac-dc6f93b3b59f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="4afc16e9-0503-4a39-b95e-1abfea2ae516"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="8dde1f47-c85d-4323-9965-0a81dc8e7f62"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="a0e1c9ca-d998-4527-aca3-c4d37b25f859"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
